@@ -35,11 +35,15 @@ public class Insert extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 contact.setEmail(email.getText().toString().trim());
-               contact.setTopic(topic.getText().toString().trim());
+                contact.setTopic(topic.getText().toString().trim());
                 contact.setContent(content.getText().toString().trim());
 
-               reference.child("contact").setValue(contact);
+
+
+                reference.push().setValue(contact);
                 Toast.makeText(Insert.this,"Data Insert Success",Toast.LENGTH_LONG).show();
 
 

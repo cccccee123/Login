@@ -4,9 +4,9 @@
 
 
     <item
-        android:id="@+id/nav_search"
-        android:icon="@drawable/ic_attach_money_black_24dp"
-        android:title="Catergory" />
+        android:id="@+id/nav_phone"
+        android:icon="@drawable/ic_smartphone_black_24dp"
+        android:title="Phone" />
     <item
         android:id="@+id/nav_home"
         android:icon="@drawable/ic_home_black_24dp"

@@ -11,10 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProductActivity">
-
-        </activity>
+        <activity android:name=".ReadFire.Read"></activity>
         <activity android:name=".Insert" />
+        <activity android:name=".Pro.Detail" />
+
+        <activity android:name=".Pro.Product_Activity" />
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

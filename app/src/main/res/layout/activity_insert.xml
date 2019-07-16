@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Insert">
+    tools:context=".Insert"
+    android:background="@color/cccccc">
 
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="normal"
+
         android:hint="Email" />
 
 
@@ -19,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/topic"
+        android:textStyle="normal"
         android:hint="Topic" />
 
 
@@ -28,13 +32,20 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="normal"
         android:hint="Content" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/send"
+        android:textStyle="bold"
         android:text="SEND"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/customer"/>
 
 
 </LinearLayout>

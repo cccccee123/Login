@@ -15,6 +15,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -23,7 +25,35 @@
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="308dp"
+        tools:context=".Login" />
+
+
+
+    <ImageButton
+                android:id="@+id/phone_button"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                app:srcCompat="@drawable/phoneicon" />
+
+            <ImageButton
+                android:id="@+id/carema_button"
+                android:nextFocusDown="@drawable/phoneicon"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                app:srcCompat="@drawable/caremaicon" />
+
+
+</LinearLayout>
         <Button
             android:id="@+id/signout"
             android:layout_width="1dp"
@@ -32,7 +62,8 @@
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
+
 
         </FrameLayout>
 
