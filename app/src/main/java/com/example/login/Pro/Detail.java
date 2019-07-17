@@ -204,10 +204,13 @@ setTitle("Phone");
                     adapter.getFilter().filter(newText);
                 }
 
+
                 return true;
             }
         });
+
         return true;
+
     }
 
     @Override

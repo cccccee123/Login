@@ -118,10 +118,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                         if (data.getTitle().toLowerCase().contains(string)) {
                             filterList.add(data);
                         }
-                        mData = filterList;
-
                     }
-
+                        mData = filterList;
 
 
                 }

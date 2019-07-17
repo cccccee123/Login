@@ -139,9 +139,9 @@ ViewPager viewPager;
                         .build(),MY_REQUEST_CODE
 
         );
-        Intent   intent = new Intent(this, Insert.class);
-        startActivity(intent);
-        Toast.makeText(getApplicationContext(),"Login",Toast.LENGTH_LONG);
+//        Intent   intent = new Intent(this, Insert.class);
+//        startActivity(intent);
+//        Toast.makeText(getApplicationContext(),"Login",Toast.LENGTH_LONG);
     }
 
     @Override
