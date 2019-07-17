@@ -38,16 +38,26 @@
         tools:context=".Login" />
 
 
-
+    <TextView
+        android:id="@+id/txtCat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#0279D7"
+        android:textAlignment="center"
+        android:padding="2dp"
+         android:textSize="40sp"
+        android:text="Category" />
     <ImageButton
                 android:id="@+id/phone_button"
-                android:layout_width="1dp"
-                android:layout_height="1dp"
-                app:srcCompat="@drawable/phoneicon" />
+        android:nextFocusDown="@id/txtCat"
+        android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/phone" />
 
             <ImageButton
                 android:id="@+id/carema_button"
-                android:nextFocusDown="@drawable/phoneicon"
+                android:nextFocusDown="@drawable/ph"
                 android:layout_width="1dp"
                 android:layout_height="1dp"
                 app:srcCompat="@drawable/caremaicon" />

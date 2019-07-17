@@ -45,7 +45,7 @@ import java.util.List;
 public class Login extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, NavigationView.OnNavigationItemSelectedListener {
 
     private String[] imageUrls = new String[]{
-            "https://i.imgur.com/3aT5CO2.png",
+            "https://i.imgur.com/O3gc1zW.png",
             "https://i.imgur.com/6lXsS1n.jpg",
             "https://i.imgur.com/ukLG3nk.png"
     };
@@ -54,6 +54,7 @@ public class Login extends AppCompatActivity implements BottomNavigationView.OnN
     Button signout;
     private DrawerLayout drawer;
     ImageButton phone_button;
+
 ViewPager viewPager;
 
     @NonNull
