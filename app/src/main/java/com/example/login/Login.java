@@ -61,11 +61,7 @@ ViewPager viewPager;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-//        BottomNavigationView bottomNav =findViewById(R.id.bottom_navigation);
-//        bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-//        android.support.v7.widget.Toolbar toolbar=findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -83,14 +79,6 @@ ViewPager viewPager;
         viewPager=findViewById(R.id.viewPager);
         ViewPagerAdapter adapter = new ViewPagerAdapter(this, imageUrls);
         viewPager.setAdapter(adapter);
-        viewPager.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent   phone = new Intent(Login.this, Detail.class);
-                startActivity(phone);
-                }
-
-        });
 
 
         phone_button=findViewById(R.id.phone_button);
@@ -120,6 +108,7 @@ ViewPager viewPager;
                             public void onComplete(@NonNull Task<Void> task) {
                                 signout.setEnabled(false);
                                 showSignInOptions();
+
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -148,7 +137,11 @@ ViewPager viewPager;
                         .setAvailableProviders(providers)
 
                         .build(),MY_REQUEST_CODE
+
         );
+        Intent   intent = new Intent(this, Insert.class);
+        startActivity(intent);
+        Toast.makeText(getApplicationContext(),"Login",Toast.LENGTH_LONG);
     }
 
     @Override
@@ -199,22 +192,6 @@ ViewPager viewPager;
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
-//            case R.id.nav_search:
-//                Intent intent = new Intent(this, Search.class);
-//                startActivity(intent);
-//                Toast.makeText(getApplicationContext(),"You click Catergory",Toast.LENGTH_LONG);
-//                break;
-//            case R.id.nav_home:
-//                intent = new Intent(this, Home.class);
-//                startActivity(intent);
-//                Toast.makeText(getApplicationContext(),"You click Home",Toast.LENGTH_LONG);
-//                break;
-//
-//            case R.id.nav_favorites:
-//                intent = new Intent(this, Favorites.class);
-//                startActivity(intent);
-//                Toast.makeText(getApplicationContext(),"You click Favorites",Toast.LENGTH_LONG);
-//                break;
 
             case R.id.nav_phone:
                 Intent   intent = new Intent(this, Detail.class);

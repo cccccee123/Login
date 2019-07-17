@@ -1,17 +1,20 @@
 package com.example.login.Pro;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
-import android.widget.SearchView;
-import android.widget.Toolbar;
+import android.widget.Toast;
 
 import com.example.login.R;
 
@@ -26,6 +29,11 @@ public class Detail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+setTitle("Phone");
+        Toolbar toolbar = findViewById(R.id.toolbar1);
+        setSupportActionBar(toolbar);
+
 
 
 
@@ -91,8 +99,81 @@ public class Detail extends AppCompatActivity {
                 "功能:雙卡,SD卡槽,NFC\n" +
                 "重量:190g\n" +
                 "尺寸:159.1 x 75.44 x 9.1mm",R.drawable.asus));
-
-
+        lstProduct.add(new Product("OnePlus 7 Pro" + "(8+256GB)","HK$5,398(行)\n" +
+                "HK$4,678(水)","智能電話","描述 :上市日期:2019年5月\n" +
+                "作業系統:Andriod\n" +
+                "制式:4G/3G/2G\n" +
+                "顯示屏:6.67吋\n" +
+                "處理器:Qualcomm Snapdragon 855\n" +
+                "前鏡頭:1600萬像素\n" +
+                "後鏡頭:4800+1600+800萬像素\n" +
+                "容量:256GB\n" +
+                "記憶體:8GB\n" +
+                "功能:雙卡,指紋解鎖,面部解鎖,NFC\n" +
+                "重量:206g\n" +
+                "尺寸:162.6 x 75.9 x 8.8mm",R.drawable.oneplus2));
+        lstProduct.add(new Product("ASUS ZenFone 6\n " +"(ZS630KL) (8+256GB)","HK$5,680(行)\n" +
+                "HK$5,510(水)","智能電話","描述 :上市日期:2019年\n" +
+                "作業系統:Android 9\n" +
+                "顯示屏:6.4吋\n" +
+                "解像度:2340 x 1080\n" +
+                "處理器:Qualcomm Snapdragon 855\n" +
+                "後鏡頭:4800+1300萬像素\n" +
+                "容量:256GB\n" +
+                "記憶體:8GB\n" +
+                "功能:雙卡,SD卡槽,NFC\n" +
+                "重量:190g\n" +
+                "尺寸:159.1 x 75.44 x 9.1mm",R.drawable.asus));
+        lstProduct.add(new Product("OnePlus 7 Pro" + "(8+256GB)","HK$5,398(行)\n" +
+                "HK$4,678(水)","智能電話","描述 :上市日期:2019年5月\n" +
+                "作業系統:Andriod\n" +
+                "制式:4G/3G/2G\n" +
+                "顯示屏:6.67吋\n" +
+                "處理器:Qualcomm Snapdragon 855\n" +
+                "前鏡頭:1600萬像素\n" +
+                "後鏡頭:4800+1600+800萬像素\n" +
+                "容量:256GB\n" +
+                "記憶體:8GB\n" +
+                "功能:雙卡,指紋解鎖,面部解鎖,NFC\n" +
+                "重量:206g\n" +
+                "尺寸:162.6 x 75.9 x 8.8mm",R.drawable.oneplus2));
+        lstProduct.add(new Product("ASUS ZenFone 6\n " +"(ZS630KL) (8+256GB)","HK$5,680(行)\n" +
+                "HK$5,510(水)","智能電話","描述 :上市日期:2019年\n" +
+                "作業系統:Android 9\n" +
+                "顯示屏:6.4吋\n" +
+                "解像度:2340 x 1080\n" +
+                "處理器:Qualcomm Snapdragon 855\n" +
+                "後鏡頭:4800+1300萬像素\n" +
+                "容量:256GB\n" +
+                "記憶體:8GB\n" +
+                "功能:雙卡,SD卡槽,NFC\n" +
+                "重量:190g\n" +
+                "尺寸:159.1 x 75.44 x 9.1mm",R.drawable.asus));
+        lstProduct.add(new Product("OnePlus 7 Pro" + "(8+256GB)","HK$5,398(行)\n" +
+                "HK$4,678(水)","智能電話","描述 :上市日期:2019年5月\n" +
+                "作業系統:Andriod\n" +
+                "制式:4G/3G/2G\n" +
+                "顯示屏:6.67吋\n" +
+                "處理器:Qualcomm Snapdragon 855\n" +
+                "前鏡頭:1600萬像素\n" +
+                "後鏡頭:4800+1600+800萬像素\n" +
+                "容量:256GB\n" +
+                "記憶體:8GB\n" +
+                "功能:雙卡,指紋解鎖,面部解鎖,NFC\n" +
+                "重量:206g\n" +
+                "尺寸:162.6 x 75.9 x 8.8mm",R.drawable.oneplus2));
+        lstProduct.add(new Product("ASUS ZenFone 6\n " +"(ZS630KL) (8+256GB)","HK$5,680(行)\n" +
+                "HK$5,510(水)","智能電話","描述 :上市日期:2019年\n" +
+                "作業系統:Android 9\n" +
+                "顯示屏:6.4吋\n" +
+                "解像度:2340 x 1080\n" +
+                "處理器:Qualcomm Snapdragon 855\n" +
+                "後鏡頭:4800+1300萬像素\n" +
+                "容量:256GB\n" +
+                "記憶體:8GB\n" +
+                "功能:雙卡,SD卡槽,NFC\n" +
+                "重量:190g\n" +
+                "尺寸:159.1 x 75.44 x 9.1mm",R.drawable.asus));
 
 
         RecyclerView myrv = (RecyclerView) findViewById(R.id.recyclerview_id);
@@ -100,10 +181,43 @@ public class Detail extends AppCompatActivity {
         myrv.setLayoutManager(new GridLayoutManager(this,3));
         myrv.setAdapter(myAdapter);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.barforphone, menu);
+        MenuItem menuItem = menu.findItem(R.id.search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
 
 
+                return true;
+            }
 
+            @Override
+            public boolean onQueryTextChange(String newText) {
 
+                if (adapter != null){
+                    adapter.getFilter().filter(newText);
+                }
+
+                return true;
+            }
+        });
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        if(id==R.id.toolbar1){
+            Toast.makeText(this,"Clicked Search",Toast.LENGTH_LONG).show();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

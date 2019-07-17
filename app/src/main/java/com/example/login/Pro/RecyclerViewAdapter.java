@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,11 +24,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private Context mContext ;
     private List<Product> mData ;
+    private List<Product>mData1;
+
 
 
     public RecyclerViewAdapter(Context mContext, List<Product> mData) {
         this.mContext = mContext;
         this.mData = mData;
+        this.mData1=mData;
     }
 
     @Override
@@ -77,10 +81,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     }
 
-//    public void filterlist(ArrayList<Product> filteredlist) {
-//        mData=filteredlist;
-//        notifyDataSetChanged();
-//    }
+
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -102,6 +103,40 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 
         }
+    }
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                String string = constraint.toString();
+
+                if (string.isEmpty()) {
+                    mData = mData1;
+                } else {
+                    List<Product> filterList = new ArrayList<>();
+                    for (Product data : mData1) {
+                        if (data.getTitle().toLowerCase().contains(string)) {
+                            filterList.add(data);
+                        }
+                        mData = filterList;
+
+                    }
+
+
+
+                }
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = mData;
+
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                mData = (List<Product>) results.values;
+                notifyDataSetChanged();
+            }
+        };
     }
 
 
