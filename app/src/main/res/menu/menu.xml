@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-
+    <item android:title="Catergory">
 
     <item
         android:id="@+id/nav_phone"
         android:icon="@drawable/ic_smartphone_black_24dp"
         android:title="Phone" />
-    <item
-        android:id="@+id/nav_home"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="Home" />
-    <item
-        android:id="@+id/nav_favorites"
-        android:icon="@drawable/ic_favorite_black_24dp"
-        android:title="Favorites" />
+        <item
+            android:id="@+id/nav_carema"
+            android:icon="@drawable/ic_photo_camera_black_24dp"
+            android:title="Carema" />
 
+    </item>
 
-    <item android:title="info">
+    <item android:title="Setting">
         <menu>
 
             <item

@@ -8,7 +8,8 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".Login"
-    tools:openDrawer="start">
+    tools:openDrawer="start"
+    android:background="@drawable/back">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,7 +35,7 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="308dp"
+        android:layout_height="293dp"
         tools:context=".Login" />
 
 
@@ -42,25 +43,34 @@
         android:id="@+id/txtCat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="#0279D7"
-        android:textAlignment="center"
+        android:layout_marginTop="60dp"
+        android:background="#D1C4E9"
         android:padding="2dp"
-         android:textSize="40sp"
-        android:text="Category" />
+        android:text="Category"
+        android:textAlignment="center"
+
+        android:textSize="40sp" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_gravity="center">
+
     <ImageButton
-                android:id="@+id/phone_button"
-        android:nextFocusDown="@id/txtCat"
+        android:id="@+id/phone_button"
         android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/phone" />
+        android:layout_height="wrap_content"
+        android:nextFocusDown="@id/txtCat"
+        android:src="@drawable/phone"/>
+
 
             <ImageButton
                 android:id="@+id/carema_button"
                 android:nextFocusDown="@drawable/ph"
-                android:layout_width="1dp"
-                android:layout_height="1dp"
-                app:srcCompat="@drawable/caremaicon" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/carema" />
+</LinearLayout>
 
 
 </LinearLayout>

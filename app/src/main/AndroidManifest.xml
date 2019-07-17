@@ -6,15 +6,15 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/icon"
+        android:icon="@mipmap/iconx"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/iconx"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ReadFire.Read"></activity>
+        <activity android:name=".About"></activity>
+        <activity android:name=".Ca.DetailCa"></activity>
         <activity android:name=".Insert" />
         <activity android:name=".Pro.Detail" />
-
         <activity android:name=".Pro.Product_Activity" />
         <activity android:name=".Login">
             <intent-filter>

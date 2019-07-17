@@ -6,23 +6,23 @@
     android:gravity="bottom"
     android:orientation="vertical"
     android:padding="16dp"
+
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@mipmap/icon" />
+        android:layout_width="239dp"
+        android:layout_height="81dp"
+        android:src="@drawable/barganing" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
-        android:text="Coding in Flow"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="Welcome users"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="20sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="info@codinginflow.com" />
+
 
 </LinearLayout>

@@ -23,11 +23,7 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 
-import com.example.login.Fragment.FavoritesFragment;
-
-import com.example.login.Fragment.HomeFragment;
-
-import com.example.login.Fragment.SearchFragment;
+import com.example.login.Ca.DetailCa;
 
 import com.example.login.Pro.Detail;
 import com.firebase.ui.auth.AuthUI;
@@ -45,15 +41,15 @@ import java.util.List;
 public class Login extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, NavigationView.OnNavigationItemSelectedListener {
 
     private String[] imageUrls = new String[]{
-            "https://i.imgur.com/O3gc1zW.png",
-            "https://i.imgur.com/6lXsS1n.jpg",
-            "https://i.imgur.com/ukLG3nk.png"
+            "https://i.imgur.com/BIFJWwM.png",
+            "https://i.imgur.com/6lXsS1n.jpg"
+
     };
     private static final int MY_REQUEST_CODE = 1234 ;
     List<AuthUI.IdpConfig>providers;
     Button signout;
     private DrawerLayout drawer;
-    ImageButton phone_button;
+    ImageButton phone_button,carema_button;
 
 ViewPager viewPager;
 
@@ -81,7 +77,17 @@ ViewPager viewPager;
         ViewPagerAdapter adapter = new ViewPagerAdapter(this, imageUrls);
         viewPager.setAdapter(adapter);
 
+        carema_button=findViewById(R.id.carema_button);
 
+        carema_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent   carema = new Intent(Login.this, DetailCa.class);
+                startActivity(carema);
+                Toast.makeText(getApplicationContext(),"Carema",Toast.LENGTH_LONG);
+                ;
+            }
+        });
         phone_button=findViewById(R.id.phone_button);
         phone_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,32 +168,7 @@ ViewPager viewPager;
             }
         }
     }
-//private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-//        new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-//                Fragment selectedFragment = null;
-//
-//                switch (menuItem.getItemId()) {
-//                    case R.id.nav_money:
-//                        selectedFragment = new HomeFragment();
-//                        break;
-//
-//                    case R.id.nav_favorites:
-//                        selectedFragment = new FavoritesFragment();
-//                        break;
-//
-//                    case R.id.nav_search:
-//                        selectedFragment = new SearchFragment();
-//                        break;
-//                }
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                        selectedFragment).commit();
-//                return true;
-//            }
-//
-//
-//        };
+
 
 
     @Override
@@ -201,15 +182,13 @@ ViewPager viewPager;
                 break;
 
 
-            case R.id.nav_home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new HomeFragment()).commit();
+            case R.id.nav_carema:
+                Intent   intent2 = new Intent(this, DetailCa.class);
+                startActivity(intent2);
+                Toast.makeText(getApplicationContext(),"Carema",Toast.LENGTH_LONG);
                 break;
 
-            case R.id.nav_favorites:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new FavoritesFragment()).commit();
-                break;
+
 
 
             case R.id.signout:
@@ -241,6 +220,8 @@ ViewPager viewPager;
             Toast.makeText(getApplicationContext(),"You click contact",Toast.LENGTH_LONG).show();
         }
         else if (id== R.id.about) {
+            Intent intentx = new Intent(this, About.class);
+            startActivity(intentx);
             Toast.makeText(getApplicationContext(), "You click about", Toast.LENGTH_LONG).show();
 
         }

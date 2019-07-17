@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".About"
+    >
+
+
+
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/textview"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        android:textStyle="normal"
+        android:layout_marginTop="70dp"
+    android:text="The app is made by The new bird company."></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:textStyle="normal"
+        android:id="@+id/textview1"
+        android:text="This application is our project work."></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:textStyle="normal"
+        android:id="@+id/textview2"
+        android:layout_marginTop="150dp"
+
+        android:text="Thank you!."></TextView>
+
+</LinearLayout>

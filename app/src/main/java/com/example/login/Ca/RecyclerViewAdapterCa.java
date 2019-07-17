@@ -1,4 +1,4 @@
-package com.example.login.Pro;
+package com.example.login.Ca;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.login.Pro.Product;
+import com.example.login.Pro.Product_Activity;
 import com.example.login.R;
 
 import java.util.ArrayList;
@@ -20,15 +22,15 @@ import java.util.List;
  * Created by Aws on 28/01/2018.
  */
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
+public class RecyclerViewAdapterCa extends RecyclerView.Adapter<RecyclerViewAdapterCa.MyViewHolder> {
 
     private Context mContext ;
-    private List<Product> mData ;
-    private List<Product>mData1;
+    private List<com.example.login.Pro.Product> mData ;
+    private List<com.example.login.Pro.Product>mData1;
 
 
 
-    public RecyclerViewAdapter(Context mContext, List<Product> mData) {
+    public RecyclerViewAdapterCa(Context mContext, List<com.example.login.Pro.Product> mData) {
         this.mContext = mContext;
         this.mData = mData;
         this.mData1=mData;
@@ -104,6 +106,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         }
     }
+
 
 
 }
