@@ -38,12 +38,13 @@
         android:layout_height="293dp"
         tools:context=".Login" />
 
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="ChangeLanguage"
-    android:id="@+id/changelang"
-    />
+    <Button
+        android:id="@+id/changelang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ChangeLanguage"
+        android:layout_gravity="right"/>
+
     <TextView
         android:id="@+id/txtCat"
         android:layout_width="match_parent"
