@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:textStyle="normal"
 
-        android:hint="Email" />
+        android:hint="@string/email" />
 
 
 
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/topic"
         android:textStyle="normal"
-        android:hint="Topic" />
+        android:hint="@string/topic" />
 
 
 
@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="normal"
-        android:hint="Content" />
+        android:hint="@string/content" />
 
     <Button
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
         android:id="@+id/send"
         android:textStyle="bold"
         android:background="@color/colorAccent"
-        android:text="SEND"/>
+        android:text="@string/send"/>
 
     <ImageView
         android:layout_width="wrap_content"

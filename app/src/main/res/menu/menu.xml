@@ -6,21 +6,17 @@
     <item
         android:id="@+id/nav_phone"
         android:icon="@drawable/ic_smartphone_black_24dp"
-        android:title="Phone" />
+        android:title="@string/phone" />
         <item
             android:id="@+id/nav_carema"
             android:icon="@drawable/ic_photo_camera_black_24dp"
-            android:title="Carema" />
+            android:title="@string/carema" />
+        <item
+            android:id="@+id/signout"
+            android:icon="@drawable/ic_directions_run_black_24dp"
+            android:title="@string/logout" />
 
     </item>
 
-    <item android:title="Setting">
-        <menu>
 
-            <item
-                android:id="@+id/signout"
-                android:icon="@drawable/ic_directions_run_black_24dp"
-                android:title="Signout" />
-        </menu>
-    </item>
 </menu>

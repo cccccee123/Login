@@ -1,6 +1,10 @@
 package com.example.login;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
@@ -10,6 +14,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -37,6 +42,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 public class Login extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, NavigationView.OnNavigationItemSelectedListener {
 
@@ -45,13 +51,13 @@ public class Login extends AppCompatActivity implements BottomNavigationView.OnN
             "https://i.imgur.com/6lXsS1n.jpg"
 
     };
-    private static final int MY_REQUEST_CODE = 1234 ;
-    List<AuthUI.IdpConfig>providers;
-    Button signout;
+    private static final int MY_REQUEST_CODE = 1234;
+    List<AuthUI.IdpConfig> providers;
+    Button signout, changelang;
     private DrawerLayout drawer;
-    ImageButton phone_button,carema_button;
+    ImageButton phone_button, carema_button;
 
-ViewPager viewPager;
+    ViewPager viewPager;
 
     @NonNull
     @Override
@@ -72,38 +78,41 @@ ViewPager viewPager;
         toggle.syncState();
 
 
-
-        viewPager=findViewById(R.id.viewPager);
+        viewPager = findViewById(R.id.viewPager);
         ViewPagerAdapter adapter = new ViewPagerAdapter(this, imageUrls);
         viewPager.setAdapter(adapter);
 
-        carema_button=findViewById(R.id.carema_button);
+        carema_button = findViewById(R.id.carema_button);
 
         carema_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent   carema = new Intent(Login.this, DetailCa.class);
+                Intent carema = new Intent(Login.this, DetailCa.class);
                 startActivity(carema);
-                Toast.makeText(getApplicationContext(),"Carema",Toast.LENGTH_LONG);
+                Toast.makeText(getApplicationContext(), "Carema", Toast.LENGTH_LONG);
                 ;
             }
         });
-        phone_button=findViewById(R.id.phone_button);
+        phone_button = findViewById(R.id.phone_button);
         phone_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent   phone = new Intent(Login.this, Detail.class);
+                Intent phone = new Intent(Login.this, Detail.class);
                 startActivity(phone);
-                Toast.makeText(getApplicationContext(),"Phone",Toast.LENGTH_LONG);
+                Toast.makeText(getApplicationContext(), "Phone", Toast.LENGTH_LONG);
                 ;
             }
         });
 
 
-
-
-
-        signout=findViewById(R.id.signout);
+        changelang = findViewById(R.id.changelang);
+        changelang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showChangelanuage();
+            }
+        });
+        signout = findViewById(R.id.signout);
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -120,7 +129,7 @@ ViewPager viewPager;
                         }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(Login.this,""+e.getMessage(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(Login.this, "" + e.getMessage(), Toast.LENGTH_LONG).show();
                     }
 
                 });
@@ -138,12 +147,13 @@ ViewPager viewPager;
         showSignInOptions();
     }
 
+
     private void showSignInOptions() {
         startActivityForResult(
                 AuthUI.getInstance().createSignInIntentBuilder()
                         .setAvailableProviders(providers)
 
-                        .build(),MY_REQUEST_CODE
+                        .build(), MY_REQUEST_CODE
 
         );
 //        Intent   intent = new Intent(this, Insert.class);
@@ -170,31 +180,28 @@ ViewPager viewPager;
     }
 
 
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
 
             case R.id.nav_phone:
-                Intent   intent = new Intent(this, Detail.class);
+                Intent intent = new Intent(this, Detail.class);
                 startActivity(intent);
-                Toast.makeText(getApplicationContext(),"Phone",Toast.LENGTH_LONG);
+                Toast.makeText(getApplicationContext(), "Phone", Toast.LENGTH_LONG);
                 break;
 
 
             case R.id.nav_carema:
-                Intent   intent2 = new Intent(this, DetailCa.class);
+                Intent intent2 = new Intent(this, DetailCa.class);
                 startActivity(intent2);
-                Toast.makeText(getApplicationContext(),"Carema",Toast.LENGTH_LONG);
+                Toast.makeText(getApplicationContext(), "Carema", Toast.LENGTH_LONG);
                 break;
 
 
-
-
             case R.id.signout:
-              Intent  intent1 = new Intent(this, Login.class);
+                Intent intent1 = new Intent(this, Login.class);
                 startActivity(intent1);
-                Toast.makeText(getApplicationContext(),"Signout",Toast.LENGTH_LONG);
+                Toast.makeText(getApplicationContext(), "Signout", Toast.LENGTH_LONG);
 
                 break;
         }
@@ -204,7 +211,7 @@ ViewPager viewPager;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolbarmenu,menu);
+        getMenuInflater().inflate(R.menu.toolbarmenu, menu);
         return true;
     }
 
@@ -217,18 +224,58 @@ ViewPager viewPager;
         if (id == R.id.contact) {
             Intent intent = new Intent(this, Insert.class);
             startActivity(intent);
-            Toast.makeText(getApplicationContext(),"You click contact",Toast.LENGTH_LONG).show();
-        }
-        else if (id== R.id.about) {
+            Toast.makeText(getApplicationContext(), "You click contact", Toast.LENGTH_LONG).show();
+        } else if (id == R.id.about) {
             Intent intentx = new Intent(this, About.class);
             startActivity(intentx);
             Toast.makeText(getApplicationContext(), "You click about", Toast.LENGTH_LONG).show();
 
         }
 
-        return  true;
+        return true;
     }
 
 
+
+    private void showChangelanuage() {
+        final String[] listitems ={"Chinese","English"};
+        final AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
+        builder.setTitle("Choose Language");
+        builder.setSingleChoiceItems(listitems, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                if(i == 0) {
+                    setLocale("zh");
+                    recreate();
+                }
+                    else if(i == 1) {
+                    setLocale("en");
+                    recreate();
+                    }
+                    dialog.dismiss();
+                }
+            });
+            AlertDialog mdialog = builder.create();
+        mdialog.show();
+
+
     }
 
+    private void setLocale(String lang) {
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale=locale;
+        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+
+        SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
+        editor.putString("MY_LANG",lang);
+        editor.apply();
+
+    }
+public  void  loadLocale(){
+        SharedPreferences preferences= getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String lanuage = preferences.getString("MY_LANG","");
+        setLocale(lanuage);
+    }
+}

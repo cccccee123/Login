@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Chinese</string>
+    <string name="logout" >登出</string>
+    <string name="phone">智能電話</string>
+    <string name="carema">數碼相機</string>
+    <string name="email">電郵地址</string>
+    <string name="topic">主題</string>
+    <string name="about">關於</string>
+
+    <string name="content">內容</string>
+    <string name="send">傳送</string>
+    <string name="catergory" >分類</string>
+</resources>

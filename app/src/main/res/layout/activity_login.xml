@@ -38,7 +38,12 @@
         android:layout_height="293dp"
         tools:context=".Login" />
 
-
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="ChangeLanguage"
+    android:id="@+id/changelang"
+    />
     <TextView
         android:id="@+id/txtCat"
         android:layout_width="match_parent"
@@ -46,7 +51,7 @@
         android:layout_marginTop="60dp"
         android:background="#D1C4E9"
         android:padding="2dp"
-        android:text="Category"
+        android:text="@string/catergory"
         android:textAlignment="center"
 
         android:textSize="40sp" />
